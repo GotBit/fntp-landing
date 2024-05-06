@@ -1,0 +1,42 @@
+{
+  "name": "fntp-landing",
+  "private": true,
+  "scripts": {
+    "build": "yarn build:static",
+    "serve": "yarn serve:server",
+    "dev": "nuxi dev --host",
+    "build:server": "nuxt build",
+    "build:static": "nuxt generate && rm -rf dist && cp -r .output/public dist",
+    "serve:static": "nuxt preview",
+    "serve:server": "nuxi start",
+    "postinstall": "nuxt prepare",
+    "type": "nuxi typecheck",
+    "lint": "prettier --check \"./**/*.{ts,tsx,vue}\"",
+    "format": "prettier --write \"./**/*.{ts,tsx,vue}\""
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "18",
+    "@vueuse/core": "^10.3.0",
+    "@vueuse/nuxt": "^10.3.0",
+    "nuxt": "^3.6.5",
+    "nuxt-svgo": "^3.5.3",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "typescript": "^5.2.2",
+    "vue-tsc": "^1.8.10"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.8.1",
+    "@pinia/nuxt": "^0.5.1",
+    "moment": "^2.29.4",
+    "naive-ui": "^2.37.3",
+    "nuxt-font-loader": "^2.3.1",
+    "pinia": "^2.1.7",
+    "viem": "^1.20.0",
+    "string-width": "v4.2.0"
+  }
+}

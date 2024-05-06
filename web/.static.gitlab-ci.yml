@@ -1,0 +1,22 @@
+stages:
+  - aws_resources
+  - test
+  - build
+  - deploy
+
+include:
+  - project: '$DEVOPS_PROJECT_PATH'
+    ref: 'main'
+    file: 'gitlabci/test/frontend/lint/.gitlab-ci.yml'
+  - project: '$DEVOPS_PROJECT_PATH'
+    ref: 'main'
+    file: 'gitlabci/test/frontend/type/.gitlab-ci.yml'
+  - project: '$DEVOPS_PROJECT_PATH'
+    ref: 'main'
+    file: 'gitlabci/terraform/frontend/.gitlab-ci.yml'
+  - project: '$DEVOPS_PROJECT_PATH'
+    ref: 'main'
+    file: 'gitlabci/build/frontend/.gitlab-ci.yml'
+  - project: '$DEVOPS_PROJECT_PATH'
+    ref: 'main'
+    file: 'gitlabci/deploy/frontend/.gitlab-ci.yml'

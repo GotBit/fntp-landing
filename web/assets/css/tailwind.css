@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-fp-brand-black overflow-x-hidden;
+  }
+  h1 {
+    @apply text-fp-80 lg:text-fp-100 font-semibold text-fp-brand-white;
+  }
+  h2 {
+    @apply text-fp-36 lg:text-fp-64 font-semibold text-fp-brand-white;
+  }
+  h3 {
+    @apply text-fp-24 lg:text-fp-32 font-semibold;
+  }
+  h4 {
+    @apply text-fp-20 font-medium;
+  }
+  h5 {
+    @apply text-fp-36 lg:text-fp-40 font-semibold;
+  }
+  p {
+    @apply text-fp-14 lg:text-fp-16;
+  }
+}
+
+@layer components {
+  .fntp-section {
+    @apply max-w-[1440px] w-full flex items-center flex-col gap-[24px] mx-auto;
+  }
+
+  .hover-active {
+    @apply hover:opacity-[.8] active:opacity-[.7] duration-[250ms];
+  }
+
+  .fix-browser {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: all;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+
+  @supports (touch-action: pan-y) {
+    .pan-y {
+      -ms-touch-action: pan-y;
+          touch-action: pan-y;
+    }
+  }
+  @supports (touch-action: pan-x) {
+    .pan-x {
+      -ms-touch-action: pan-x;
+          touch-action: pan-x;
+    }
+  }
+}

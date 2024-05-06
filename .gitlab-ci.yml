@@ -1,0 +1,12 @@
+stages:
+  - app
+
+web:
+  stage: app
+  variables:
+    WEB_DIR: web
+    BACKEND_DIR: $WEB_DIR
+    FRONTEND_DIR: $WEB_DIR
+  trigger:
+    include: $WEB_DIR/.static.gitlab-ci.yml
+    strategy: depend
